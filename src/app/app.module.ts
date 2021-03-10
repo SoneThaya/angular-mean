@@ -1,3 +1,5 @@
+import { AppRoutingModule } from './app-routing.module';
+
 import { PostListComponent } from './posts/post-list/post-list.component';
 import { HeaderComponent } from './header/header.component';
 import { PostCreateComponent } from './posts/post-create/post-create.component';
@@ -24,6 +26,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     FormsModule,
     MatInputModule,
     BrowserAnimationsModule,
