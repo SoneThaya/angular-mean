@@ -1,9 +1,10 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
-import { Post } from './post.model';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
+
+import { Post } from './post.model';
 
 @Injectable({ providedIn: 'root' })
 export class PostsService {
@@ -61,7 +62,7 @@ export class PostsService {
   updatePost(id: string, title: string, content: string) {
     const post: Post = { id: id, title: title, content: content };
     this.http
-      .put('http://localhost:3000/api/posts' + id, post)
+      .put('http://localhost:3000/api/posts/' + id, post)
       .subscribe((response) => {
         const updatedPosts = [...this.posts];
         const oldPostIndex = updatedPosts.findIndex((p) => p.id === post.id);
