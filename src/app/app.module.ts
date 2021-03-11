@@ -1,3 +1,4 @@
+import { SignupComponent } from './auth/signup/signup.component';
 import { LoginComponent } from './auth/login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -27,6 +28,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HeaderComponent,
     PostListComponent,
     LoginComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
