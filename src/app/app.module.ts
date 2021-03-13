@@ -1,3 +1,5 @@
+import { SuccessInterceptor } from './success-interceptor';
+import { SuccessComponent } from './success/success.component';
 import { ErrorComponent } from './error/error.component';
 import { ErrorInterceptor } from './error-interceptor';
 import { AuthInterceptor } from './auth/auth-interceptor';
@@ -34,6 +36,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LoginComponent,
     SignupComponent,
     ErrorComponent,
+    SuccessComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,8 +57,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: SuccessInterceptor, multi: true },
   ],
   bootstrap: [AppComponent],
-  entryComponents: [ErrorComponent]
+  entryComponents: [ErrorComponent, SuccessComponent],
 })
 export class AppModule {}
