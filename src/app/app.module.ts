@@ -1,4 +1,3 @@
-import { AuthModule } from './auth/auth.module';
 import { PostsModule } from './posts/post.module';
 import { AngularMaterialModule } from './angular-material.module';
 import { SuccessInterceptor } from './success-interceptor';
@@ -27,7 +26,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
     PostsModule,
-    AuthModule,
     BrowserAnimationsModule,
     AngularMaterialModule,
     HttpClientModule,
