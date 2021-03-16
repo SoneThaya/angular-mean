@@ -21,7 +21,6 @@ export class SuccessInterceptor implements HttpInterceptor {
   ): Observable<HttpEvent<any>> {
     return next.handle(req).pipe(
       tap((evt) => {
-        console.log('success interceptor', evt);
         let successMessage = 'Nice';
 
         if (evt instanceof HttpResponse) {

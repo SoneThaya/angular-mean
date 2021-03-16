@@ -20,7 +20,7 @@ exports.createUser = (req, res, next) => {
         });
       });
   });
-}
+};
 
 exports.userLogin = (req, res, next) => {
   let fetchedUser;
@@ -42,7 +42,7 @@ exports.userLogin = (req, res, next) => {
       }
       const token = jwt.sign(
         { email: fetchedUser.email, userId: fetchedUser._id },
-        "secret",
+        process.env.JWT_SECRET,
         { expiresIn: "1h" }
       );
       res.status(200).json({
@@ -56,4 +56,4 @@ exports.userLogin = (req, res, next) => {
         message: "Invalid authentication credentials!",
       });
     });
-}
+};
